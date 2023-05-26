@@ -1,4 +1,15 @@
 .header {
+
+}
+
+a {
+    color: rgb(0, 132, 255);
+    text-decoration: none;
+}
+
+a:visited {
+    color: rgb(0, 132, 255);
+    text-decoration: none;
 }
 
 .grid-container {
