@@ -1,14 +1,22 @@
+body {
+    background-color: rgb(9, 34, 39);
+}
+
+h1, h2, h3, p {
+    color: #F6F1F1;
+}
+
 .header {
 
 }
 
 a {
-    color: rgb(0, 132, 255);
+    color: #F6F1F1;
     text-decoration: none;
 }
 
 a:visited {
-    color: rgb(0, 132, 255);
+    color: #19A7CE;
     text-decoration: none;
 }
 
@@ -23,6 +31,16 @@ a:visited {
 .intro > h1 {
     text-align: center;
     font-size: 50px;
+}
+
+.social {
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 40px;
+}
+
+.links > a {
+    color: #F6F1F1;
 }
 
 .section {
