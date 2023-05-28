@@ -101,7 +101,7 @@ button.social:hover{
     display: flex;
     flex-direction: row;
     gap: 2em;
-    width: 550px;
+    width: 600px;
 }
 
 .company {
