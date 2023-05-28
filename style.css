@@ -123,6 +123,10 @@ button.social:hover{
     margin: 0;
 }
 
+.duration {
+    color: grey;
+}
+
 .role {
     color: grey;
     font-weight: normal;
