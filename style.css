@@ -146,6 +146,12 @@ button.social:hover{
     margin: 0;
 }
 
+.school__description, .company__description {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
 .duration {
     color: grey;
 }
