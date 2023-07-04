@@ -11,13 +11,21 @@ body {
     padding: 0;
 }
 
+.willa-link {
+    color: #19A7CE;
+}
+
 a {
     color: #F6F1F1;
     text-decoration: none;
 }
 
-a:visited {
+a > i:hover, a:hover {
     color: #19A7CE;
+}
+
+a:visited {
+    /* color: #19A7CE; */
     text-decoration: none;
 }
 
@@ -36,16 +44,22 @@ section {
     min-width: 100px;
 }
 
+/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+@media screen and (max-width: 600px) {
+    .topnav a.navlink {display: none;}
+}
+  
+
 .navmenu {
     margin-left: auto;
 }
 
-.navmenu > li {
+.navmenu > a {
     display:inline-block;
     margin-left: 15px;
 }
 
-.navmenu > li > a:visited {
+.navmenu > a > a:visited {
     color: #F6F1F1;
 }
 
