@@ -160,6 +160,33 @@ button.social:hover{
     width: 400px;
     margin: 10px;
     border: 1px solid #F6F1F1;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.project-title {
+    font-size: x-large;
+    margin:auto;
+}
+
+.project-thumbnail {
+    width: 350px;
+    margin: auto;
+}
+
+.project-stack {
+    margin: auto;
+}
+
+.project-links {
+    margin: auto;
+}
+
+.project-links > a > i {
+    margin: 0 10px;
+    font-size: x-large;
+    color:#19A7CE;
 }
 
 .skill__list {
@@ -195,3 +222,4 @@ button.social:hover{
 .my-email {
     color:#19A7CE;
 }
+
