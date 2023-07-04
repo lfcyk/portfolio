@@ -243,3 +243,7 @@ button.social:hover{
     color:#19A7CE;
 }
 
+.videoplayer {
+    margin: auto;
+    max-width: fit-content;
+}
