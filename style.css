@@ -247,3 +247,11 @@ button.social:hover{
     margin: auto;
     max-width: fit-content;
 }
+
+.videoplayer-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
