@@ -1,31 +1,23 @@
-import Image from 'next/image'
-import purwadhikalogo from "../../images/purwadhikalogo.png"
-import nitnclogo from "../../images/nitnclogo.png"
-import jassologo from "../../images/jassologo.jpg"
-import EducationCard from './card'
+import ExperienceCard from './card'
+import HCILogo from "../../images/hareindologo.png"
+import Harekbshk from "../../images/Harelogo.webp"
 
 function Education() {
     return (
         <section id="education" className="section education flex flex-col gap-10 mb-10">
-            <h2 className="text-2xl mx-auto w-min">EDUCATION</h2>
-            <EducationCard 
-                schoolName="Purwadhika Digital Technology School"
-                schoolPicture={purwadhikalogo}
-                major="Intensive Full Stack Web Development Bootcamp"
-                attendedYear="2023/04~2023/08"
-            />
-            <EducationCard 
-                schoolName="National Institute of Technology, Numazu College"
-                schoolPicture={nitnclogo}
-                major="Associate in Control and Computer Engineering"
-                attendedYear="2020/04~2023/03"
-            />
-            <EducationCard 
-                schoolName="Tokyo Japanese Language Education Center"
-                schoolPicture={jassologo}
-                major="Japanese Studies"
-                attendedYear="2019/04~2020/03"
-            />
+            <h2 className="text-2xl mx-auto w-min">Experience</h2>
+            <div className="flex flex-col gap-3">
+                <ExperienceCard companyName="PT. Harehare Creative Indonesia"
+                    roleAndDuration="(Software Engineer Intern, 2023/08~)"
+                    jobdesc="Full-Stack Web and Mobile Developer"
+                    companyLogo={HCILogo}
+                    />
+                <ExperienceCard companyName="株式会社Harehare"
+                    roleAndDuration="(Software Engineer Intern, 2021/08)"
+                    jobdesc=""
+                    companyLogo={Harekbshk}
+                    />
+            </div>
         </section>
     )
 }

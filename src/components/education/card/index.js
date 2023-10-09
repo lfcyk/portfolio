@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 export default function EducationCard(props) {
   return (
-    <div className="school flex flex-row gap-5 w-2/5 mx-auto">
+    <div className="card school flex flex-row gap-5 w-2/5 mx-auto p-2">
             <div className="school__header">
                 <Image src={props.schoolPicture} width={70}/>
             </div>
