@@ -2,14 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.card {
-    border-color: hsl(var(--p));
-    border-radius: 0%;
-    border-style: solid;
-    border-width: 1px;
-
-    /* background-color: red; */
-}
 
 .lfcyk {
     color: hsl(var(--p));

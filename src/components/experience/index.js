@@ -9,7 +9,7 @@ function Education() {
             <div className="flex flex-col gap-3">
                 <ExperienceCard companyName="PT. Harehare Creative Indonesia"
                     roleAndDuration="(Software Engineer Intern, 2023/08~)"
-                    jobdesc="Full-Stack Web and Mobile Developer"
+                    jobdesc=""
                     companyLogo={HCILogo}
                     />
                 <ExperienceCard companyName="株式会社Harehare"
