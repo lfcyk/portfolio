@@ -4,7 +4,7 @@ import { FaLinkedin, FaGithub } from "react-icons/fa"
 export default function Greeting() {
 return (
 	<div>
-		<div class="intro">
+		<div className="intro">
 			<h1 className="font-bold">Hi, I am <span className="blue">Willa!</span></h1>
 			<p>I am passionate about software engineering and technology in general</p>
 			<div className="flex flex-row items-center gap-4 w-min mx-auto mt-5">
