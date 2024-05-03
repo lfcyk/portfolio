@@ -1,6 +1,6 @@
 import ExperienceCard from './card'
 import HCILogo from "../../images/hareindologo.png"
-import Harekbshk from "../../images/Harelogo.webp"
+import Harekbshk from "../../images/harelogo.webp"
 import { Separator } from '../ui/separator'
 
 const experience = {
