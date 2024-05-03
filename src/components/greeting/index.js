@@ -68,7 +68,7 @@ return (
 						<FaGithub/>
 						<span className=" mt-1 block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-primary"></span>
 					</a>
-					<Link href="/files/240429resume.pdf" target="blank" locale={false} className="p-2">
+					<Link href="/files/resume.pdf" target="blank" locale={false} className="p-2">
 						<button className="btn btn-primary px-10 text-primary hover:text-white bg-transparent  rounded-none border-2 hover:bg-primary">
 							{
 								language=='japanese'
