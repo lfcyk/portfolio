@@ -9,11 +9,24 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@radix-ui/react-separator": "^1.0.3",
+    "@radix-ui/react-slot": "^1.0.2",
+    "@radix-ui/react-switch": "^1.0.3",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
+    "country-flag-icons": "^1.5.11",
+    "embla-carousel-react": "^8.0.2",
+    "lucide-react": "^0.376.0",
     "next": "13.5.4",
     "react": "^18",
     "react-device-detect": "^2.2.3",
     "react-dom": "^18",
-    "react-icons": "^4.11.0"
+    "react-icons": "^4.11.0",
+    "react-snap-scroll": "^0.0.5",
+    "react-use-scroll-snap": "^1.0.0",
+    "react-world-flags": "^1.6.0",
+    "tailwind-merge": "^2.3.0",
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "autoprefixer": "^10",
