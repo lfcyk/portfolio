@@ -46,13 +46,7 @@ return (
 					{
 						language=='japanese'?
 						<span>
-							{/* NextjsやFlutterなどでモノを作ることが好きな <br className="flex"/>
-							<span className="text-primary">
-								ソフトウェアエンジニア
-							</span>
-							です。 */}
-							
-							<span className="text-primary-focus">Web・モバイル・自動車向け組込みシステム</span>まで<br className="flex"/>幅広い経験があり、新しい技術を習うのが好きな <br className="flex"/>
+							<span className="text-primary-focus">Web・モバイル・自動車向け組込みシステム</span>まで<br className="flex"/>幅広い経験を持ち、新しい技術を学ぶのが好きな <br className="flex"/>
 							<span className="text-primary">
 								ソフトウェアエンジニア
 							</span>
@@ -60,7 +54,7 @@ return (
 						</span>
 						:
 						<span>
-							a weeb <span className="text-primary">software engineer</span> who loves exploring new technologies, with experience across web, mobile, and automotive embedded systems. 
+							a <span className="text-primary">software engineer</span> who loves exploring new technologies, with experience across web, mobile, and automotive embedded systems. 
 						</span>
 					}
 					

@@ -9,19 +9,19 @@ const experience = {
         {
             'companyName': 'Komatsu Kaihatsu Kogyo',
             'roleAndDuration': '(Embedded Software Engineer, 2025/04~)',
-            'jobdesc': '',
+            'jobdesc': 'MATLAB/SIMULINK、C++',
             'companyLogo': Komatsulogo,
         },
         {
             'companyName': 'PT. Harehare Creative Indonesia',
-            'roleAndDuration': '(Software Engineer, 2023/08~2025/01)',
-            'jobdesc': '',
+            'roleAndDuration': '(Software Engineer, 2023/08～2025/01)',
+            'jobdesc': 'Nextjs, Flutter, Laravel, MySQL',
             'companyLogo': HCILogo,
         },
         {
             'companyName': '株式会社Harehare',
             'roleAndDuration': '(Software Engineer Intern, 2021/08)',
-            'jobdesc': 'Summer Internship',
+            'jobdesc': 'Bubble (Summer Internship)',
             'companyLogo': Harekbshk,
         },
         
@@ -29,20 +29,20 @@ const experience = {
     japanese: [
         {
             'companyName': '小松開発工業株式会社',
-            'roleAndDuration': '(組込みエンジニア, 2025/04~)',
-            'jobdesc': '',
+            'roleAndDuration': '(組込みエンジニア, 2025年04月～)',
+            'jobdesc': 'MATLAB/SIMULINK、C++',
             'companyLogo': Komatsulogo,
         },
         {
             'companyName': 'PT. Harehare Creative Indonesia',
-            'roleAndDuration': '(ソフトウェアエンジニア, 2023年08月～)',
-            'jobdesc': '',
+            'roleAndDuration': '(ソフトウェアエンジニア, 2023年08月～2025年01月)',
+            'jobdesc': 'Nextjs, Flutter, Laravel, MySQL',
             'companyLogo': HCILogo,
         },
         {
             'companyName': '株式会社Harehare',
             'roleAndDuration': '(ソフトウェアエンジニア, 2021年08月)',
-            'jobdesc': 'Summer Internship',
+            'jobdesc': 'Bubble (サマーインターンシップ)',
             'companyLogo': Harekbshk,
         },
     ],
