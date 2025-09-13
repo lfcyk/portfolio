@@ -65,7 +65,7 @@ export default function Home({initJp}) {
 		const page = Math.round(scroll/window.innerHeight);
 		
 		setCurrentPage(page);
-		setBackground(page);
+		setBackground(page>4? 0:page);
 	};
 
 	const scrollTo = (elementId) => {
