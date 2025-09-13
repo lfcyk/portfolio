@@ -10,6 +10,10 @@ import Experience from "../components/experience"
 import Awards from "../components/awards"
 
 import totoroPic from '@/images/totoro.png'
+import skyPic from '@/images/sky.jpeg'
+import spiritedAwayPic from '@/images/spiritedAway.jpg'
+import theWindRisesPic from '@/images/theWindRises.jpg'
+import nedStarkPic from '@/images/nedStark.jpg'
 import Projects from '@/components/projects'
 import Skills from '@/components/skills'
 import Contact from '@/components/contact/page';
@@ -21,6 +25,30 @@ export default function Home({initJp}) {
 	const [darkMode, setDarkMode] = useState(true);
 	const [japaneseMode, setJapaneseMode] = useState(initJp || false);
 	const [currentPage, setCurrentPage] = useState(0);
+	const [background, setBackground] = useState(0);
+
+	const bgArray = [
+		{
+			src: totoroPic,
+			alt: "Totoro"
+		}, 
+		{
+			src: skyPic,
+			alt: "sky"
+		}, 
+		{
+			src: spiritedAwayPic,
+			alt: "Spirited Away"
+		}, 
+		{
+			src: theWindRisesPic,
+			alt: "The Wind Rises"
+		}, 
+		{
+			src: nedStarkPic,
+			alt: "Eddard Stark"
+		}, 
+	];
 
 	const language = japaneseMode? 'japanese' : 'english';
 	
@@ -35,7 +63,9 @@ export default function Home({initJp}) {
 	const getscroll = () => {
 		const scroll = Math.abs((ref.current.getBoundingClientRect().top - ref.current.offsetTop));
 		const page = Math.round(scroll/window.innerHeight);
+		
 		setCurrentPage(page);
+		setBackground(page);
 	};
 
 	const scrollTo = (elementId) => {
@@ -52,10 +82,10 @@ export default function Home({initJp}) {
 				<Greeting language={language}/>
 				<div className='h-screen w-[100vh] sticky top-0 hidden xl:block'>
 					<Image
-							src={totoroPic} 
+							src={bgArray[background].src} 
 							fill={true}
 							sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-							alt={`totoro`} 
+							alt={bgArray[background].alt} 
 							style={{objectFit: "cover"}}
 						/>
 				</div>				
