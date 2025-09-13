@@ -22,9 +22,9 @@ return (
 				<h1 className="font-bold  text-[50px] mb-0 text-right ">
 					{
 						language=='japanese'?
-						<span>こんにちは、<br className="flex"/></span>
+						<span>どうも、<br className="flex"/></span>
 						:
-						'Hi, I am ' 
+						'Hi, I\'m ' 
 					}
 					
 					<span className="text-[hsl(var(--p))]">
@@ -46,15 +46,21 @@ return (
 					{
 						language=='japanese'?
 						<span>
-							NextjsやFlutterなどでモノを作ることが好きな <br className="flex"/>
+							{/* NextjsやFlutterなどでモノを作ることが好きな <br className="flex"/>
 							<span className="text-primary">
 								ソフトウェアエンジニア
 							</span>
-							です。
+							です。 */}
+							
+							<span className="text-primary-focus">Web・モバイル・自動車向け組込みシステム</span>まで<br className="flex"/>幅広い経験があり、新しい技術を習うのが好きな <br className="flex"/>
+							<span className="text-primary">
+								ソフトウェアエンジニア
+							</span>
+							です！
 						</span>
 						:
 						<span>
-							a weeb <span className="text-primary">software engineer</span> who loves to create stuff in Nextjs, Flutter or other frameworks.
+							a weeb <span className="text-primary">software engineer</span> who loves exploring new technologies, with experience across web, mobile, and automotive embedded systems. 
 						</span>
 					}
 					
@@ -68,7 +74,7 @@ return (
 						<FaGithub/>
 						<span className=" mt-1 block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-primary"></span>
 					</a>
-					<Link href="/files/resume.pdf" target="blank" locale={false} className="p-2">
+					<Link href="/files/resume.pdf" target="blank" locale={"false"} className="p-2">
 						<button className="btn btn-primary px-10 text-primary hover:text-white bg-transparent  rounded-none border-2 hover:bg-primary">
 							{
 								language=='japanese'

@@ -45,7 +45,7 @@ export default function Home({initJp}) {
 	return (
 		<div className='flex flex-col bg-base-200' data-theme={darkMode? "night" : "emerald"}>
 			<NavBar changeTheme={changeTheme} changeLanguage={changeLanguage} darkMode={darkMode} japaneseMode={japaneseMode} language={language} currentPage={currentPage} scrollTo={scrollTo}/>
-			<div className='flex flex-col md:flex-row w-screen h-screen overflow-auto md:snap-y md:snap-mandatory md:overflow-y-scroll' 
+			<div className='flex flex-col md:flex-row w-screen h-screen overflow-auto md:snap-y md:snap-mandatory md:overflow-y-scroll relative' 
 				
 				onScroll={getscroll}
 				>
@@ -60,14 +60,14 @@ export default function Home({initJp}) {
 						/>
 				</div>				
 				<div className='flex flex-col max-w-[600px] bg-base-200 ' ref={ref}>
+					<div id='experience' className='md:h-screen  max-md:scroll-mt-[30px] md:pt-[64px]  flex flex-col justify-center  px-7 max-lg:py-10  snap-center'>
+						<Experience language={language}/>
+					</div>
 					<div className=' snap-center max-md:scroll-mt-[30px]' id='education'>
 						<div className='md:h-screen  md:pt-[64px]  flex flex-col justify-center px-7 max-lg:py-10 '>
 							<Education language={language}/>
 							<Awards language={language}/>
 						</div>
-					</div>
-					<div id='experience' className='md:h-screen  max-md:scroll-mt-[30px] md:pt-[64px]  flex flex-col justify-center  px-7 max-lg:py-10  snap-center'>
-						<Experience language={language}/>
 					</div>
 					<div id='projects' className=' snap-center max-md:scroll-mt-[30px]'>
 						<div className='md:h-screen  md:pt-[64px]  flex flex-col justify-center max-lg:py-10 '>

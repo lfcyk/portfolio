@@ -8,10 +8,10 @@ import { Separator } from '../ui/separator';
 const menuArray = {
 	'english': [
 		{
-			'title' : 'education',
+			'title' : 'experience',
 		},
 		{
-			'title' : 'experience',
+			'title' : 'education',
 		},
 		{
 			'title' : 'projects',
@@ -25,10 +25,10 @@ const menuArray = {
 	],
 	'japanese': [
 		{
-			'title' : '教育',
+			'title' : '経験',
 		},
 		{
-			'title' : '経験',
+			'title' : '教育',
 		},
 		{
 			'title' : 'プロジェクト',

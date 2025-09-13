@@ -1,24 +1,38 @@
 import ExperienceCard from './card'
 import HCILogo from "../../images/hareindologo.png"
 import Harekbshk from "../../images/harelogo.webp"
+import Komatsulogo from "../../images/komatsulogo.png"
 import { Separator } from '../ui/separator'
 
 const experience = {
     english: [
         {
+            'companyName': 'Komatsu Kaihatsu Kogyo',
+            'roleAndDuration': '(Embedded Software Engineer, 2025/04~)',
+            'jobdesc': '',
+            'companyLogo': Komatsulogo,
+        },
+        {
             'companyName': 'PT. Harehare Creative Indonesia',
-            'roleAndDuration': '(Software Engineer, 2023/08~)',
+            'roleAndDuration': '(Software Engineer, 2023/08~2025/01)',
             'jobdesc': '',
             'companyLogo': HCILogo,
         },
         {
             'companyName': '株式会社Harehare',
             'roleAndDuration': '(Software Engineer Intern, 2021/08)',
-            'jobdesc': '',
+            'jobdesc': 'Summer Internship',
             'companyLogo': Harekbshk,
         },
+        
     ],
     japanese: [
+        {
+            'companyName': '小松開発工業株式会社',
+            'roleAndDuration': '(組込みエンジニア, 2025/04~)',
+            'jobdesc': '',
+            'companyLogo': Komatsulogo,
+        },
         {
             'companyName': 'PT. Harehare Creative Indonesia',
             'roleAndDuration': '(ソフトウェアエンジニア, 2023年08月～)',
@@ -28,7 +42,7 @@ const experience = {
         {
             'companyName': '株式会社Harehare',
             'roleAndDuration': '(ソフトウェアエンジニア, 2021年08月)',
-            'jobdesc': '',
+            'jobdesc': 'Summer Internship',
             'companyLogo': Harekbshk,
         },
     ],

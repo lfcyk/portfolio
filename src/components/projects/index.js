@@ -204,14 +204,14 @@ export default function Projects({language}) {
                         <Image 
                           src={wectTgThumb}
                           width={300}
-                          alt={`hayf-thumbnail`}
+                          alt={`wect-thumbnail`}
                         />
                         <Separator className='mb-4 mt-8'/>
                         <h1 className="text-base-content text-2xl mb-2 text-center">W-Eye-Cross-Talk <br/> Training Gate</h1>
                         <p className="text-base-content text-center">Kotlin, Android Studio, Jetpack Compose</p>
                       </div>
                       <div className="flex flex-row w-full  text-3xl justify-center gap-8 text-base-content">
-                        <a href="files/hayf-slide.pdf" target="blank" locale={false} className="btn-ghost group transition duration-300 hover:text-primary p-2">
+                        <a href="files/wect-tg-slide.pdf" target="blank" locale={"false"} className="btn-ghost group transition duration-300 hover:text-primary p-2">
                           <RiSlideshowLine/>
                           <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-primary mt-2"></span>
                         </a>
@@ -235,7 +235,7 @@ export default function Projects({language}) {
                         <p className="text-base-content text-center">Python, Raspberry Pi, Tkinter</p>
                       </div>
                       <div className="flex flex-row w-full  text-3xl justify-center gap-8 text-base-content ">
-                        <a href="/files/hayf-slide.pdf" target="blank" locale={false} className="btn-ghost group transition duration-300 hover:text-primary p-2">
+                        <a href="/files/hayf-slide.pdf" target="blank" locale={"false"} className="btn-ghost group transition duration-300 hover:text-primary p-2">
                           <RiSlideshowLine/>
                           <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-primary mt-2"></span>
                         </a>
