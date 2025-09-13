@@ -9,7 +9,7 @@ const experience = {
         {
             'companyName': 'Komatsu Kaihatsu Kogyo',
             'roleAndDuration': '(Embedded Software Engineer, 2025/04~)',
-            'jobdesc': 'MATLAB/SIMULINK、C++',
+            'jobdesc': 'MATLAB/SIMULINK、C/C++',
             'companyLogo': Komatsulogo,
         },
         {
@@ -30,7 +30,7 @@ const experience = {
         {
             'companyName': '小松開発工業株式会社',
             'roleAndDuration': '(組込みエンジニア, 2025年04月～)',
-            'jobdesc': 'MATLAB/SIMULINK、C++',
+            'jobdesc': 'MATLAB/SIMULINK、C/C++',
             'companyLogo': Komatsulogo,
         },
         {
