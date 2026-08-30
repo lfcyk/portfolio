@@ -1,8 +1,7 @@
 'use client';
 import dynamic from 'next/dynamic'
 import Image from 'next/image'
-import { useRef, useEffect, useState } from "react";
-import useScrollSnap from "react-use-scroll-snap";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 import Greeting from "../components/greeting"
 import Education from "../components/education"
@@ -21,7 +20,7 @@ import Contact from '@/components/contact/page';
 const NavBar = dynamic(() => import('../components/navbar'), { ssr: false })
 
 export default function Home({initJp}) {
-	const ref = useRef();	
+	const scrollContainerRef = useRef(null);
 	const [darkMode, setDarkMode] = useState(true);
 	const [japaneseMode, setJapaneseMode] = useState(initJp || false);
 	const [currentPage, setCurrentPage] = useState(0);
@@ -60,13 +59,46 @@ export default function Home({initJp}) {
 		setJapaneseMode(!japaneseMode);
 	}
 
-	const getscroll = () => {
-		const scroll = Math.abs((ref.current.getBoundingClientRect().top - ref.current.offsetTop));
-		const page = Math.round(scroll/window.innerHeight);
-		
-		setCurrentPage(page);
-		setBackground(page>4? 0:page);
-	};
+	const updateVisibleSection = useCallback(() => {
+		const container = scrollContainerRef.current;
+		if (!container) return;
+
+		if (window.innerWidth < 768 && container.scrollTop < window.innerHeight * 0.55) {
+			setCurrentPage(-1);
+			setBackground(0);
+			return;
+		}
+
+		const sectionIds = ['experience', 'education', 'projects', 'skills', 'contact'];
+		const containerRect = container.getBoundingClientRect();
+		const viewportCenter = containerRect.top + container.clientHeight / 2;
+		let closestIndex = 0;
+		let closestDistance = Number.POSITIVE_INFINITY;
+
+		sectionIds.forEach((sectionId, index) => {
+			const section = document.getElementById(sectionId);
+			if (!section) return;
+
+			const sectionRect = section.getBoundingClientRect();
+			const sectionCenter = sectionRect.top + sectionRect.height / 2;
+			const distance = Math.abs(sectionCenter - viewportCenter);
+
+			if (distance < closestDistance) {
+				closestDistance = distance;
+				closestIndex = index;
+			}
+		});
+
+		setCurrentPage(closestIndex);
+		setBackground(Math.min(closestIndex, 4));
+	}, []);
+
+	useEffect(() => {
+		updateVisibleSection();
+		window.addEventListener('resize', updateVisibleSection);
+
+		return () => window.removeEventListener('resize', updateVisibleSection);
+	}, [updateVisibleSection]);
 
 	const scrollTo = (elementId) => {
 		// document.getElementById(elementId).scrollIntoView();
@@ -75,11 +107,12 @@ export default function Home({initJp}) {
 	return (
 		<div className='flex flex-col bg-base-200' data-theme={darkMode? "night" : "emerald"}>
 			<NavBar changeTheme={changeTheme} changeLanguage={changeLanguage} darkMode={darkMode} japaneseMode={japaneseMode} language={language} currentPage={currentPage} scrollTo={scrollTo}/>
-			<div className='flex flex-col md:flex-row w-screen h-screen overflow-auto md:snap-y md:snap-mandatory md:overflow-y-scroll relative' 
-				
-				onScroll={getscroll}
-				>
-				<Greeting language={language}/>
+			<div
+				ref={scrollContainerRef}
+				className='flex h-screen w-full flex-col overflow-x-hidden overflow-y-auto md:flex-row md:snap-y md:snap-mandatory md:overflow-y-scroll relative'
+				onScroll={updateVisibleSection}
+			>
+				<Greeting language={language} currentPage={currentPage}/>
 				<div className='h-screen w-[100vh] sticky top-0 hidden xl:block'>
 					<Image
 							src={bgArray[background].src} 
@@ -89,28 +122,28 @@ export default function Home({initJp}) {
 							style={{objectFit: "cover"}}
 						/>
 				</div>				
-				<div className='flex flex-col max-w-[600px] bg-base-200 ' ref={ref}>
-					<div id='experience' className='md:h-screen  max-md:scroll-mt-[30px] md:pt-[64px]  flex flex-col justify-center  px-7 max-lg:py-10  snap-center'>
+				<div className='flex flex-col max-w-[600px] bg-base-200'>
+					<div id='experience' className='min-h-screen shrink-0 max-md:scroll-mt-[64px] md:pt-[64px] flex flex-col justify-center px-7 py-12 snap-start'>
 						<Experience language={language}/>
 					</div>
-					<div className=' snap-center max-md:scroll-mt-[30px]' id='education'>
-						<div className='md:h-screen  md:pt-[64px]  flex flex-col justify-center px-7 max-lg:py-10 '>
+					<div className='shrink-0 snap-start max-md:scroll-mt-[64px]' id='education'>
+						<div className='min-h-screen md:pt-[64px] flex flex-col justify-center px-7 py-12'>
 							<Education language={language}/>
 							<Awards language={language}/>
 						</div>
 					</div>
-					<div id='projects' className=' snap-center max-md:scroll-mt-[30px]'>
-						<div className='md:h-screen  md:pt-[64px]  flex flex-col justify-center max-lg:py-10 '>
+					<div id='projects' className='shrink-0 snap-start max-md:scroll-mt-[64px]'>
+						<div className='min-h-screen md:pt-[64px] flex flex-col justify-center py-12'>
 							<Projects language={language}/>
 						</div>
 					</div>
-					<div id='skills' className=' snap-center max-md:scroll-mt-[30px] '>
-						<div className='md:h-screen md:pt-[64px]  flex flex-col justify-center max-lg:py-10 '>
+					<div id='skills' className='shrink-0 snap-start max-md:scroll-mt-[64px]'>
+						<div className='min-h-screen md:pt-[64px] flex flex-col justify-center py-12'>
 							<Skills language={language} isDarkMode={darkMode}/>
 						</div>
 					</div>
-					<div id='contact' className=' snap-center  max-md:scroll-mt-[30px]'>
-						<div className='md:h-screen md:pt-[64px]  flex flex-col justify-center max-lg:py-10 items-center'>
+					<div id='contact' className='shrink-0 snap-start max-md:scroll-mt-[64px]'>
+						<div className='min-h-screen md:pt-[64px] flex flex-col justify-center py-12 items-center'>
 							<Contact language={language}/>
 						</div>
 					</div>
@@ -120,4 +153,4 @@ export default function Home({initJp}) {
 			</div>
 		</div>
 	)
-}	
+}

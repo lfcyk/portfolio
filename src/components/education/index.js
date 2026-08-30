@@ -36,7 +36,7 @@ const education = {
 
 function Education({language}) {
     return (
-        <section id="education" className="section education flex flex-col gap-5 pb-16">
+        <section className="section education flex flex-col gap-5 pb-16">
             <h2 className="text-2xl">
                 {
                     language=='japanese'

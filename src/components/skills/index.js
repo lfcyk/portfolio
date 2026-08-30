@@ -6,7 +6,6 @@ import javascript from "@/images/tech-logo/JavaScript.svg";
 import typescript from "@/images/tech-logo/TypeScript.svg";
 import flutter from "@/images/tech-logo/Flutter.svg";
 import tailwind from "@/images/tech-logo/Tailwind CSS.svg";
-import express from "@/images/tech-logo/Express.svg";
 import kotlin from "@/images/tech-logo/Kotlin.svg";
 import laravel from "@/images/tech-logo/Laravel.svg";
 import mongodb from "@/images/tech-logo/MongoDB.svg";
@@ -14,15 +13,42 @@ import mysql from "@/images/tech-logo/MySQL.svg";
 import next from "@/images/tech-logo/Next.js.svg";
 import nodejs from "@/images/tech-logo/Node.js.svg";
 import php from "@/images/tech-logo/PHP.svg";
-import postgre from "@/images/tech-logo/PostgresSQL.svg";
-import vite from "@/images/tech-logo/PostgresSQL.svg";
 import react from "@/images/tech-logo/React.svg";
-import dart from "@/images/tech-logo/Dart.svg";
-import { Card, CardContent } from "@/components/ui/card";
+import cpp from "@/images/tech-logo/CPlusPlus.svg";
+import matlab from "@/images/tech-logo/MATLAB.svg";
+import opencv from "@/images/tech-logo/OpenCV.svg";
+import python from "@/images/tech-logo/Python.svg";
+import carla from "@/images/tech-logo/CARLA.png";
+import verification from "@/images/tech-logo/Verification.svg";
+import { Card } from "@/components/ui/card";
 import Image from "next/image";
 import Flag from "react-world-flags";
 
 const techstack = [
+  {
+    'name': 'C++',
+    'logo': cpp
+  },
+  {
+    'name': 'Python',
+    'logo': python
+  },
+  {
+    'name': 'MATLAB / Simulink',
+    'logo': matlab
+  },
+  {
+    'name': 'CARLA',
+    'logo': carla
+  },
+  {
+    'name': 'OpenCV',
+    'logo': opencv
+  },
+  {
+    'name': 'MIL · SIL · HIL',
+    'logo': verification
+  },
   {
     'name': 'HTML',
     'logo': html
@@ -94,20 +120,21 @@ export default function Skills({language, isDarkMode}) {
       <div className='px-7 mb-3'>
         <Separator />
       </div>
-      <div className="flex flex-row gap-1 flex-wrap px-5 mb-10">
+      <div className="grid grid-cols-3 gap-2 px-5 mb-10 sm:grid-cols-4 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
         {
           techstack.map((tech) => {
             return (
-              <Card key={tech.name} className={`${isDarkMode? 'bg-neutral hover:bg-primary-content' : 'hover:bg-[color:var(--vista-blue)] bg-primary'} w-[6rem] select-none`}>
-                <div className=' flex flex-col justify-center items-center gap-2 m-3 text-neutral-content'>
-                  <div className="">
+              <Card key={tech.name} className="min-w-0 select-none !bg-base-100 text-base-content transition-colors hover:!bg-base-200">
+                <div className='flex min-h-[78px] flex-col justify-center items-center gap-2 p-2 text-base-content'>
+                  <div className="grid h-9 place-items-center">
                     <Image
                       src={tech.logo}
                       alt={tech.name}
-                      height={40}
+                      height={36}
+                      className="h-9 w-9 object-contain"
                     />
                   </div>
-                  <div className="text-center min-w-fit justify-self-end text-sm">
+                  <div className="text-center justify-self-end text-xs leading-tight">
                     {tech.name}
                   </div>
                 </div>
@@ -128,7 +155,7 @@ export default function Skills({language, isDarkMode}) {
       </div>
       <div className="flex flex-col gap-2 select-none px-7 mb-3">
         <div className="flex flex-row gap-2 flex-wrap">
-          <Card className='bg-base-200 p-1 hover:bg-base-100'>
+          <Card className='!bg-base-100 p-1 hover:!bg-base-200'>
             <div className="flex flex-row w-fit justify-center items-center gap-2  px-1 text-base-content">
               <div className="w-7">
                 <Flag code='GB'/>
@@ -147,7 +174,7 @@ export default function Skills({language, isDarkMode}) {
               </span>
             </div>
           </Card>
-          <Card className='bg-base-200 p-1 hover:bg-base-100'>
+          <Card className='!bg-base-100 p-1 hover:!bg-base-200'>
             <div className="flex flex-row w-fit justify-center items-center gap-2  px-1 text-base-content">
               <div className="w-7">
                 <Flag code='JP'/>
@@ -168,7 +195,7 @@ export default function Skills({language, isDarkMode}) {
           </Card>
         </div>
         <div className="flex flex-row gap-2 flex-wrap">
-          <Card className='bg-base-200 p-1 hover:bg-base-100'>
+          <Card className='!bg-base-100 p-1 hover:!bg-base-200'>
             <div className="flex flex-row w-fit justify-center items-center gap-2  px-1 text-base-content">
               <div className="w-7">
                 <Flag code='ID'/>
@@ -187,7 +214,7 @@ export default function Skills({language, isDarkMode}) {
               </span>
             </div>
           </Card>
-          <Card className='bg-base-200 p-1 opacity-70 hover:bg-base-100'>
+          <Card className='!bg-base-100 p-1 hover:!bg-base-200'>
             <div className="flex flex-row w-fit justify-center items-center gap-2  px-1 text-base-content">
               {
                 language=='japanese'

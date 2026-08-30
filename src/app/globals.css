@@ -13,3 +13,24 @@
   --vista-blue: rgba(142,217,176,1);
   --san-marino: rgba(59,107,156,1);
 }
+
+@keyframes section-pop {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.section-popover {
+  animation: section-pop 280ms ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section-popover {
+    animation: none;
+  }
+}

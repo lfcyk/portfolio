@@ -60,6 +60,7 @@ function NavBar(props) {
 									<div key={menu.title} className={`hidden md:flex mx-1`}>
 										<li><a 
 										className={props.currentPage==index? props.darkMode ?'bg-primary-content': 'bg-primary': ''}
+										aria-current={props.currentPage==index ? 'page' : undefined}
 										onClick={() => {props.scrollTo(menuArray.english[index].title);}}
 										>
 											{menu.title}

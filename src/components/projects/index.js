@@ -14,7 +14,6 @@ import { Separator } from "@/components/ui/separator"
 import { LuGithub } from "react-icons/lu";
 import { LuExternalLink } from "react-icons/lu";
 import { RiSlideshowLine } from "react-icons/ri";
-import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
 import { MdOutlineSwipe } from "react-icons/md";
 
 
@@ -27,8 +26,22 @@ import hayfThumb from '@/images/hayf-thumbnail.png'
 import wectTgThumb from '@/images/wect-tg-thumbnail.png'
 import izmidioThumb from '@/images/izmi-dio-thumbnail.gif'
 import portfolThumb from '@/images/portfolio-thumbnail.gif'
+import controlGif from '@/images/control.gif'
 
 const topProjects = [
+  {
+    'name': 'CARLA Lane Detection & Vehicle Control',
+    'thumbnail': controlGif,
+    'stack': 'Python, CARLA, OpenCV, Pure Pursuit, PID',
+    'unoptimized': true,
+    'links': [
+      {
+        'icon': <LuGithub/>,
+        'link':'https://github.com/lfcyk/CARLA-Lane-Detection-and-Vehicle-Control',
+        'label': 'View CARLA project on GitHub',
+      },
+    ],
+  },
   {
     'name': 'Kana Sprint',
     'thumbnail': kanasprintThumb,
@@ -154,7 +167,7 @@ export default function Projects({language}) {
         </div>
         <div className="text-center opacity-70 flex lg:hidden justify-center flex-row items-center gap-3">
           <MdOutlineSwipe/>
-          swipe to see other projects
+          {language=='japanese' ? 'スワイプして他のプロジェクトを見る' : 'swipe to see other projects'}
           <MdOutlineSwipe/>
         </div>
         <div className="flex flex-col lg:px-10 max-w-[450px] md:max-lg:w-[350px] max-sm:max-w-[100vw] justify-center justify-self-center self-center ">
@@ -172,6 +185,8 @@ export default function Projects({language}) {
                                 src={project.thumbnail}
                                 width={300}
                                 alt={`${project.name}-thumbnail`}
+                                unoptimized={project.unoptimized}
+                                className="rounded-md"
                               />
                               <Separator className='mb-4 mt-8'/>
                               <h1 className="text-base-content text-2xl mb-2 text-center">{project.name}</h1>
@@ -181,7 +196,12 @@ export default function Projects({language}) {
                               {
                                 project.links.map((link) => {
                                   return (
-                                    <a href={link.link} key={link.link} className="btn-ghost group transition duration-300 hover:text-primary p-2">
+                                    <a
+                                      href={link.link}
+                                      key={link.link}
+                                      aria-label={link.label || `Open ${project.name}`}
+                                      className="btn-ghost group transition duration-300 hover:text-primary p-2"
+                                    >
                                       {link.icon}
                                       <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-primary mt-2"></span>
                                     </a>

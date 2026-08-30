@@ -1,10 +1,16 @@
 import Image from 'next/image'
 import EducationCard from '../education/card'
 import monbuLogo from "../../images/mextlogo.jpg"
+import universityOfTorontoLogo from "../../images/university_of_toronto_logo.jpg"
 import { Separator } from '../ui/separator'
 
 const awards = {
     english: [
+        {
+            'schoolName':"Self-Driving Cars Specialization",
+            'schoolPicture':universityOfTorontoLogo,
+            'major':"University of Toronto · Coursera",
+        },
         {
             'schoolName':"Japanese Government (MEXT) Scholarship",
             'schoolPicture':monbuLogo,
@@ -13,6 +19,11 @@ const awards = {
         }
     ],
     japanese: [
+        {
+            'schoolName':"自動運転車スペシャライゼーション",
+            'schoolPicture':universityOfTorontoLogo,
+            'major':"トロント大学 · Coursera",
+        },
         {
             'schoolName':"文部科学省（MEXT）奨学金",
             'schoolPicture':monbuLogo,
@@ -24,12 +35,12 @@ const awards = {
 
 function Awards({language}) {
     return (
-        <section id="education" className="section education flex flex-col gap-5">
+        <section className="section education flex flex-col gap-5">
             <h2 className="text-2xl">
                 {
                     language=='japanese'
-                    ? '賞'
-                    : 'awards'
+                    ? '受賞・資格'
+                    : 'awards & certifications'
                 }
             </h2>
             <Separator/>
